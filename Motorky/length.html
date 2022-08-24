@@ -7,6 +7,7 @@
   div.wheelbase {display: none;}
   div.tyretop {display: none;}
   div.tyreback {display: none;}
+  div.sit {display: none;}
   div.mot {left: 0px;}
 </style>
 <!--
@@ -26,7 +27,7 @@
 
 
 
-<div style="position: absolute; left:59px; top:-395px; opacity: 0.7;">
+<div style="position: absolute; left:59px; top:-395px; opacity: 1.0;">
 <img width="1785" src="Aprilia-SRMAX300-14.png"/>
 </div>
 <div class="wheelbase" style="position: absolute; left:395px; bottom:0px; width: 1136px; width-mm: 1515; height: 1px; background-color: red;"> </div>
@@ -35,14 +36,14 @@
 
 -->
 
-<div class="mot" id="mot1" style="position: absolute; bottom:0px; opacity: 0.7;">
+<div class="mot" id="mot1" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width="1620" src="pr5-length.png"/>
 </div>
 <div class="tyretop" style="position: absolute; right:0px; bottom:522px; wheel: 90/90-21; width: 522px; height: 1px; background-color: red;"> </div>
 <div class="tyreback" style="position: absolute; right:522px; bottom:0px; wheel: 90/90-21; width: 1px; height: 522px; background-color: red;"> </div>
 
 
-<div class="mot" id="mot2" style="position: absolute; bottom:0px; opacity: 0.7;">
+<div class="mot" id="mot2" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width=1661"" src="kle-length.png"/>
 </div>
 <div class="tyretop" style="position: absolute; right:0px; bottom:522px; wheel: 90/90-21; width: 522px; height: 1px; background-color: red;"> </div>
@@ -50,7 +51,7 @@
 
 
 
-<div class="mot" id="mot3" style="position: absolute; bottom:0px; opacity: 0.7;">
+<div class="mot" id="mot3" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width=1625"" src="scram-length.png"/>
 </div>
 <div class="tyretop" style="position: absolute; right:0px; bottom:497px; wheel: 100/90-19; width: 497px; height: 1px; background-color: red;"> </div>
@@ -58,7 +59,7 @@
 
 
 
-<div class="mot" id="mot4" style="position: absolute; bottom:0px; opacity: 0.7;">
+<div class="mot" id="mot4" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width="1582" src="fantic-length.png"/>
 </div>
 <div class="tyretop" style="position: absolute; right:0px; bottom:494px; wheel: 110/80-19; width: 494px; height: 1px; background-color: red;"> </div>
@@ -66,7 +67,7 @@
 
 
 
-<div class="mot" id="mot5" style="position: absolute; bottom:0px; opacity: 0.7;">
+<div class="mot" id="mot5" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width=1582"" src="srmax-length.png"/>
 </div>
 <div class="tyretop" style="position: absolute; right:0px; bottom:412px; wheel: 120/70-15; width: 412px; height: 1px; background-color: red;"> </div>
@@ -74,7 +75,7 @@
 
 
 
-<div class="mot" id="mot6" style="position: absolute; bottom:0px; opacity: 0.7;">
+<div class="mot" id="mot6" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width="1520" src="xsr-length.png"/>
 </div>
 <div class="tyretop" style="position: absolute; right:0px; bottom:440px; wheel: 110/70-17; width: 440px; height: 1px; background-color: red;"> </div>
@@ -82,21 +83,21 @@
 
 
 
-<div class="mot" id="mot7" style="position: absolute; bottom:0px; opacity: 0.7;">
+<div class="mot" id="mot7" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width=1535"" src="hunter-length.png"/>
 <div class="sit" style="position: absolute; left:455px; bottom:596px; width: 100px; height: 10px; background-color: blue;"> </div>
 </div>
 <div class="tyretop" style="position: absolute; right:0px; bottom:440px; wheel: 110/70-17; width: 440px; height: 1px; background-color: red;"> </div>
 <div class="tyreback" style="position: absolute; right:440px; bottom:0px; wheel: 110/70-17; width: 1px; height: 440px; background-color: red;"> </div>
 
-<div class="mot" id="mot8" style="position: absolute; bottom:0px; opacity: 0.7;">
+<div class="mot" id="mot8" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width="1320" src="grom-length.png"/>
 <div class="sit" style="position: absolute; left:396px; bottom:569px; width: 100px; height: 10px; background-color: blue;"> </div>
 </div>
 <div class="tyretop" style="position: absolute; right:0px; bottom:357px; wheel: 120/70-12; width: 357px; height: 1px; background-color: red;"> </div>
 <div class="tyreback" style="position: absolute; right:357px; bottom:0px; wheel: 120/70-12; width: 1px; height: 357px; background-color: red;"> </div>
 
-<div class="mot" id="mot9" style="position: absolute; bottom:0px; opacity: 0.7;">
+<div class="mot" id="mot9" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width="1337" src="super-soco-cux-length.png"/>
 <div class="sit" style="position: absolute; left:350px; bottom:546px; width: 100px; height: 10px; background-color: blue;"> </div>
 </div>
@@ -146,22 +147,59 @@
     var opacities = [];
     opacities.length = 10;
     for(i = 1; i <= 9; i++) {
-        opacities[i] = 0.7;
+        opacities[i] = 1.0;
     }
+    
+    var lastIndex = null;
     
     document.addEventListener('keydown', (e) => {
         let index = e.keyCode - 48;
         if ((index >= 1) && (index <= 9)) {
             var opacity = opacities[index];
             if (opacity == 1.0)
-                opacity = 0.7;
-            else if (opacity == 0.0)
-                opacity = 1.0;
-            else
                 opacity = 0.0;
+            else if (opacity == 0.0)
+                opacity = 0.7;
+            else
+                opacity = 1.0;
             
             document.getElementById('mot'+index).style.opacity = opacity;
             opacities[index] = opacity;
+            lastIndex = index;
+        } else if (lastIndex != null) {
+            let motStyle = document.getElementById('mot'+lastIndex).style;
+            if ( (e.key == 'ArrowLeft') || (e.key == 'ArrowRight') || (index == 0) ) {
+                var leftPx = 0;
+                if(motStyle.left)
+                    leftPx = parseInt(motStyle.left.slice(0, -2));
+
+                var hInc = 1;
+                if (e.shiftKey)
+                    hInc = 10;
+                    
+                if (e.key == 'ArrowLeft')
+                    motStyle.left = '' + (leftPx - hInc) + 'px';
+                else if (e.key == 'ArrowRight')
+                    motStyle.left = '' + (leftPx + hInc) + 'px';
+                else if (index == 0)
+                    motStyle.left = '0px';
+            }
+            else if ( (e.key == 'ArrowUp') || (e.key == 'ArrowDown') || (e.key == '-') ) {
+                var bottoPx = 0;
+                if(motStyle.bottom)
+                    bottomPx = parseInt(motStyle.bottom.slice(0, -2));
+
+                var hInc = 1;
+                if (e.shiftKey)
+                    hInc = 10;
+                    
+                if (e.key == 'ArrowDown')
+                    motStyle.bottom = '' + (bottomPx - hInc) + 'px';
+                else if (e.key == 'ArrowUp')
+                    motStyle.bottom = '' + (bottomPx + hInc) + 'px';
+                else if (e.key == '-')
+                    motStyle.bottom = '0px';
+            }
         }
     });
     
