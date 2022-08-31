@@ -63,6 +63,15 @@
 </div>
 
 
+<div class="mot" id="mot12" style="position: absolute; bottom:0px; opacity: 1.0;">
+<img width="1620" src="tdr125-length.png"/>
+<div class="tyretop" style="position: absolute; right:0px; bottom:478px; wheel: 100/90-18; width: 478px; height: 1px; background-color: red;"> </div>
+<div class="tyreback" style="position: absolute; right:478px; bottom:0px; wheel: 100/90-18; width: 1px; height: 478px; background-color: red;"> </div>
+</div>
+
+
+
+
 <div class="mot" id="mot2" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width="1578" src="er6n-length.png"/>
 <div class="tyretop" style="position: absolute; right:0px; bottom:450px; wheel: 120/70-17; width: 450px; height: 1px; background-color: red;"> </div>
@@ -110,6 +119,12 @@
 <div class="tyreback" style="position: absolute; right:440px; bottom:0px; wheel: 110/70-17; width: 1px; height: 440px; background-color: red;"> </div>
 </div>
 
+<div class="mot" id="mot16" style="position: absolute; bottom:0px; opacity: 1.0;">
+<img width="1575" src="kmx125-length.png"/>
+<div class="tyretop" style="position: absolute; right:0px; bottom:522px; wheel: 90/90-21; width: 522px; height: 1px; background-color: red;"> </div>
+<div class="tyreback" style="position: absolute; right:522px; bottom:0px; wheel: 90/90-21; width: 1px; height: 522px; background-color: red;"> </div>
+</div>
+
 
 
 <div class="mot" id="mot6" style="position: absolute; bottom:0px; opacity: 1.0;">
@@ -127,14 +142,18 @@
 <div class="tyreback" style="position: absolute; right:440px; bottom:0px; wheel: 110/70-17; width: 1px; height: 440px; background-color: red;"> </div>
 </div>
 
+<div class="mot" id="mot18" style="position: absolute; bottom:0px; opacity: 1.0;">
+<img width=1615"" src="savage-length.png"/>
+<div class="tyretop" style="position: absolute; right:0px; bottom:497px; wheel: 100/90-19; width: 497px; height: 1px; background-color: red;"> </div>
+<div class="tyreback" style="position: absolute; right:497px; bottom:0px; wheel: 100/90-19; width: 1px; height: 497px; background-color: red;"> </div>
+</div>
+
 <div class="mot" id="mot8" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width="1320" src="grom-length.png"/>
 <div class="sit" style="position: absolute; left:396px; bottom:569px; width: 100px; height: 10px; background-color: blue;"> </div>
 <div class="tyretop" style="position: absolute; right:0px; bottom:357px; wheel: 120/70-12; width: 357px; height: 1px; background-color: red;"> </div>
 <div class="tyreback" style="position: absolute; right:357px; bottom:0px; wheel: 120/70-12; width: 1px; height: 357px; background-color: red;"> </div>
 </div>
-
-
 
 
 
@@ -194,12 +213,12 @@
     var lastIndex = null;
     var seatsCentered = false;
 
-    let lefts   = [ null, -20,  21, -10, -6,  4, 67, 62, 131, 203
-                  , null, -25,   0,   3, -10,  24,  0,  0,  0, 11
+    let lefts   = [ null, -20,  21, -10, -6,   4, 67, 62, 131, 203
+                  , null, -25, -53,   3, -10, 24, 33,  0,  40,  11
                   ]
     ;
-    let bottoms = [ null,   5, 42, 42,  3, 28, 40, 66, 89, 108
-                  , null, -22,  0, 32, 28, 40,  0,  0,  0, -67
+    let bottoms = [ null,   5, 42, 42,  3, 28,  40, 66,  89, 108
+                  , null, -22,  7, 32, 28, 40, -12,  0, 136, -67
                   ]
     ;
     
@@ -229,6 +248,22 @@
                     }
                 }
                 seatsCentered = true;
+            }
+        } else if (e.key == 'Enter') {
+            for(i = 1; i <= 19; i++) {
+                if (mot(i)) {
+                    var opacity = opacities[i];
+                    if (opacity == 1.0)
+                        opacity = 0.0;
+                    else if (opacity == 0.0)
+                        opacity = 0.7;
+                    else
+                        opacity = 1.0;
+                    
+                        mot(i).style.opacity = opacity;
+            
+                    opacities[i] = opacity;
+                }
             }
         } else if ((index >= 1) && (index <= 19)) {
             var opacity = opacities[index];
