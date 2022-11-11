@@ -2,6 +2,8 @@
 <head>
 
 
+<!--
+-->
 <style>
   div.axle {display: none;}
   div.wheelbase {display: none;}
@@ -10,8 +12,6 @@
   div.sit {display: none;}
   div.mot {left: 0px;}
 </style>
-<!--
--->
 
 <!--
 <style>
@@ -78,6 +78,12 @@
 <div class="tyreback" style="position: absolute; right:450px; bottom:0px; wheel: 120/70-17; width: 1px; height: 450px; background-color: red;"> </div>
 </div>
 
+<div class="mot" id="mot4" style="position: absolute; bottom:0px; opacity: 1.0;">
+<img width="1600" src="srv850-length.png"/>
+<div class="tyretop" style="position: absolute; right:0px; bottom:431px; wheel: 120/70-16; width: 431px; height: 1px; background-color: red;"> </div>
+<div class="tyreback" style="position: absolute; right:431px; bottom:0px; wheel: 120/70-16; width: 1px; height: 431px; background-color: red;"> </div>
+</div>
+
 <div class="mot" id="mot2" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width="1578" src="er6n-length.png"/>
 <div class="tyretop" style="position: absolute; right:0px; bottom:450px; wheel: 120/70-17; width: 450px; height: 1px; background-color: red;"> </div>
@@ -94,12 +100,6 @@
 <img width="1650" src="adv350-length.png"/>
 <div class="tyretop" style="position: absolute; right:0px; bottom:412px; wheel: 120/70-15; width: 412px; height: 1px; background-color: red;"> </div>
 <div class="tyreback" style="position: absolute; right:412px; bottom:0px; wheel: 120/70-15; width: 1px; height: 412px; background-color: red;"> </div>
-</div>
-
-<div class="mot" id="mot4" style="position: absolute; bottom:0px; opacity: 1.0;">
-<img width="1600" src="srv850-length.png"/>
-<div class="tyretop" style="position: absolute; right:0px; bottom:431px; wheel: 120/70-16; width: 431px; height: 1px; background-color: red;"> </div>
-<div class="tyreback" style="position: absolute; right:431px; bottom:0px; wheel: 120/70-16; width: 1px; height: 431px; background-color: red;"> </div>
 </div>
 
 <div class="mot" id="mot5" style="position: absolute; bottom:0px; opacity: 1.0;">
@@ -159,10 +159,18 @@
 
 
 
+<!--
 <div class="mot" id="mot6" style="position: absolute; bottom:0px; opacity: 1.0;">
 <img width="1540" src="xsr-length.png"/>
 <div class="tyretop" style="position: absolute; right:0px; bottom:440px; wheel: 110/70-17; width: 440px; height: 1px; background-color: red;"> </div>
 <div class="tyreback" style="position: absolute; right:440px; bottom:0px; wheel: 110/70-17; width: 1px; height: 440px; background-color: red;"> </div>
+</div>
+-->
+
+<div class="mot" id="mot6" style="position: absolute; bottom:0px; opacity: 1.0;">
+<img width="1645" src="nerva-exe.png"/>
+<div class="tyretop" style="position: absolute; right:0px; bottom:412px; wheel: 120/70-15; width: 412px; height: 1px; background-color: red;"> </div>
+<div class="tyreback" style="position: absolute; right:412px; bottom:0px; wheel: 120/70-15; width: 1px; height: 412px; background-color: red;"> </div>
 </div>
 
 <!--
@@ -259,12 +267,12 @@
     var lastIndex = null;
     var seatsCentered = false;
 
-    let lefts   = [ null, -20,  21, -10, -56,   4,    67, 62, 131, 203 // cabarello = -6
-                  , null, -42, -53,   3, -39, -29, -119, 80,  40,  74 // leoncino250 = 24 // cn125f = 20 // leoncino trail = -10
+    let lefts   = [ null, -20,  24, -10, -42,   4,  -68, 62, 131, 203 // cabarello = -6 // xsr125 = 67
+                  , null, -29, -53,   3, -19, -32, -119, 80,  40,  74 // leoncino250 = 24 // cn125f = 20 // leoncino trail = -10
                   ]
     ;
-    let bottoms = [ null,   5, 42, 42, 49, 28, 40, 66,  89, 108 // cabarello = 3
-                  , null, -24,  7, 32, 32, 50, 49, 44, 136, -65 // leoncino250 = -12 // cb125f = 62 // leoncino trail = 28
+    let bottoms = [ null,   5,  42,  42,  49,  28,   45, 66,  89, 108 // cabarello = 3 // xsr125 = 40
+                  , null, -24,   7,  32,  34,  48,   49, 44, 136, -65 // leoncino250 = -12 // cb125f = 62 // leoncino trail = 28
                   ]
     ;
     
